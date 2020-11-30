@@ -1,0 +1,309 @@
+/* Global */
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    margin: 0;
+    padding: 0;
+    background-color: #1C1C1C;
+}
+
+.container {
+    width: 76%;
+    margin: auto;
+    height: 49px;
+}
+
+.container-sobre {
+    width: 80%;
+    margin: auto;
+    height: 50px;
+}
+
+.btn-orange {
+    background-color: orangered;
+    color: #ffffff;
+    border: none;
+    width: 60px;
+    height: 30px;
+}
+
+.container-2{
+    margin-top:0;
+    color: #ffffff;
+}
+
+
+/* fim GLOBAL */
+
+
+/* Header */
+
+.header {
+    background-color: #2cff0017;
+    height: 80px;
+    padding-top: 0px;
+    border-bottom: black solid 5px;
+}
+
+.header .nav .menu-atual a,
+.header span {
+    /* Cor do texto */
+    color: #80ff00c4;
+}
+
+.imglogo{
+    margin-top: 16px;
+}
+
+.title-header h1,
+.
+
+/* fim HEADER */
+
+
+/* NAV */
+
+.nav ul {
+    margin: 0;
+}
+
+.title-header {
+    float: left;
+    color: #ffffff;
+}
+
+.nav {
+    float: right;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+.nav li {
+    display: inline-block;
+    padding: 20px;
+    padding: 10px 20px 0 20px;
+}
+
+
+/* Fim NAV */
+
+
+/* SHOWCASE */
+
+.showcase {
+    background-image: url(../img/cafe2.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #ffffff;
+    text-align: center;
+    min-height: 400px;
+    
+}
+
+.showcase h1 {
+    margin: 0;
+    font-size: 55px;
+    padding-top: 100px;
+}
+
+.showcase p {
+    font-size: 22px;
+}
+
+
+/* Fim SHOWCASE */
+
+
+/* NEWS */
+
+.new {
+    padding: 1px 0px 20px 0px;
+    background-color: #232323;
+    color: #ffffff;
+}
+/* 
+.new  {
+    margin: 0;
+    float: left;
+    margin:
+} */
+
+
+
+.new form {
+    float: right;
+}
+
+.new input {
+    height: 25px;
+    width: 225px;
+}
+
+
+/* fim NEWS */
+
+
+/*inicio VALORES*/
+
+.box {
+    /*height: 300px; << pode usar esse aqui em vez de ouverflow*/
+    overflow: auto;
+    /* --- COMMENT AQUI --- */
+}
+
+.box .box-item {
+    text-align: center;
+    width: 300px;
+    float: left;
+    margin: 40px 20px;
+    color: white    ;
+}
+
+.box img {
+    height: 100px;
+}
+
+
+/*fim VALORES*/
+
+/* SOBRE */
+
+#sobre {
+    height: 700px;
+    width: 100%;
+    background-color:transparent;
+    display:inline-block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: row;
+    padding-top: 137px;
+}
+
+#sobre h1 {
+    font-weight: 100;
+}
+
+.divisor {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: row; 
+}
+
+
+#sobre p {
+    color:rgb(51, 51, 51);
+    line-height: 2.5;
+}
+
+.p_small {
+    line-height:0.9;
+}
+
+.logo{
+    height:400px;
+    width:50%;
+    float:left;
+}
+
+.text-sobre-img{
+    height:400px;
+    width:50%;
+    float:left;
+    padding-top: 110px;
+    color: #ffffff;
+    margin-left: 0px;
+}
+
+.text-sobre-empresa{
+    color:#414040;
+    font-size: 18px;
+    text-decoration: none;
+    display: flex;
+}
+
+#bordersobre {
+border-bottom: 2px solid #80ff00c4;
+width: 180px;
+
+}
+
+/*FOOTER */
+
+.footer {
+    background-color: #2cff0017;
+    height: 100px;
+    margin-bottom: 0;
+    position:relative;
+    padding-bottom: 0;
+}
+
+.footer h4 {
+    text-align: center;
+    margin: 0;
+    padding: 37px;
+    color: white;
+    font-weight: 100;
+}
+
+.footerb {
+    background-color: #2cff0017;
+    height: 100px;
+    margin-bottom: 0;
+    position:relative;
+    padding-bottom: 0;
+    margin-top: 984px;
+}
+
+.footerb h4 {
+    text-align: center;
+    margin: 0;
+    padding: 37px;
+    color: white;
+    font-weight: 100;
+}
+
+.texto {
+    text-align: center;
+    color:white;
+    font-weight: 100 ;
+    padding: 30px;
+    margin-right: 20px;
+}
+
+
+.logo img{
+    height: 324px;
+    width: 56%;
+    float: left;
+    margin-top: 93px;
+    margin-left: 131px;
+    box-shadow: 3px 5px 10px black;
+}
+
+.logo- img {
+    height: 313px;
+    width: 29%;
+    float: right;
+    margin-top: 81px;
+    margin-left: 130px;
+    margin-right: 76px;
+    box-shadow: 3px 5px 10px black;}
+
+.texto-2 {
+font-size: 16px;
+}
+
+/* Aqui vai ficar a perte para esconder o cadastro */
+
+ .escondercadastro{
+    background-color: brown;
+    display: none;
+}

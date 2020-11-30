@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberCafé</title>
+    <link rel="stylesheet" href="css/inicio.css">
+    
+</head>
+<body>
+    <p class="crappybrowser">It looks like you need to download a cool futuristic browser like Firefox Nightly or Safari Technology Preview in order to view this pen. <i><span class="embrace">
+      Embrace the future</span></i></p>
+      <div class="gridcontainer">
+    
+    <div class="griditem1"></div>
+    <div class="griditem2"></div>
+        
+    <div class="griditem3"></div>
+    <div class="griditemlogo"></div>
+    <div class="griditem4">
+      <p>!!CUIDADO!!</p>
+      <p><span class="hacked">
+        <!-- <a href="/Cybercafe/Front-end1.0/index.html"><button>!!!!NÃO CLICK AQUI AVISO !!!!</button></a></i></span></p> -->
+        <a class="hacked" href="#modal"><button href="/Cybercafe/Front-end1.0/index.html">!!!!NÃO CLICK AQUI AVISO !!!!</button></a></i></span></p></a>
+
+        <div class="modal" id="modal" tabindex="-1">
+        <a href="#" class="modal__overlay" aria-label="Fechar"></a>
+        <div class="modal__content">
+        <a href="#" class="modal__close" aria-label="Fechar">x</a>
+        <div> <br> 
+          
+            <div id="manter">
+              <form id="form_login" method="post" onsubmit="return entrar()">
+            email <input id="login" type="text" name="login">
+            senha <input id="senha" type="password" name="senha">  <button type="submit">Entrar</button>
+          
+            <button onclick="showdiv()">Cadastrar</button><br>
+            <br>
+          </form>
+          </div>
+            
+            <div id="esconder">
+            <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
+
+             usuario <input type="text" name="nome">
+             email   <input type="email" name="login">
+             senha   <input type="password" name="senha">
+             confirmar senha <input type="password"> </button><button onclick="voltar()">Cadastrar</button>
+            </form>
+                
+            </div>
+
+            
+        </div>  
+        </div>
+          
+        
+    </div>
+    
+        </div>
+  
+       <pre class="griditem5">
+      ::::::::::          ::::::::   ::::::::   :::::::: ::::::::::: :::::::::: ::::::::::: :::   :::
+    :+:                :+:    :+: :+:    :+: :+:    :+:    :+:     :+:            :+:     :+:   :+:
+    +:+                +:+        +:+    +:+ +:+           +:+     +:+            +:+      +:+ +:+
+    :#::+::#           +#++:++#++ +#+    +:+ +#+           +#+     +#++:++#       +#+       +#++:
+    +#+                       +#+ +#+    +#+ +#+           +#+     +#+            +#+        +#+
+    #+#                #+#    #+# #+#    #+# #+#    #+#    #+#     #+#            #+#        #+#
+    ###                 ########   ########   ######## ########### ##########     ###        ###
+    </pre>
+    </div>
+    
+    
+      
+    </body>
+    </html>
+
+    <script>
+        function showdiv(){
+              esconder.style.display="block";
+              manter.style.display="none"
+        }
+        function voltar(){
+          esconder.style.display="none";
+              manter.style.display="block"
+        }
+
+        // function  verificar(){
+          
+        //   if (login.value==""||senha.value==""){
+        //     alert("Um ou mais campos não estão preenchidos")
+            
+        //   }
+        //     else {
+        //       window.location.href = "indexx.html"
+        //     }
+
+        // }
+
+
+
+        
+    function cadastrar() {
+        // aguardar();
+        var formulario = new URLSearchParams(new FormData(form_cadastro));
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            body: formulario
+        }).then(function (response) {
+            
+            if (response.ok) {
+
+                window.location.href='inicio.html';
+
+            } else {
+
+                console.log('Erro de cadastro!');
+                response.text().then(function (resposta) {
+                    div_erro.innerHTML = resposta;
+                });
+                // finalizar_aguardar();
+            }
+        });
+
+        return false;
+    }
+
+
+
+
+    // ENTRAR
+      
+    function entrar() {
+        // aguardar(giflogin);
+        var formulario = new URLSearchParams(new FormData(form_login));
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            body: formulario
+        }).then(resposta => {
+
+            if (resposta.ok) {
+
+                resposta.json().then(json => {
+
+                    sessionStorage.login_usuario_meuapp = json.login;
+                    sessionStorage.nome_usuario_meuapp = json.nome;
+
+                    window.location.href = 'indexx.html';
+                });
+
+            } else {
+
+                console.log('Erro de login!');
+                    alert("Email ou senha incorreto!")
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    // finalizar_aguardar(giflogin);
+                });
+            }
+        });
+
+        return false;
+    }
+
+    </script>

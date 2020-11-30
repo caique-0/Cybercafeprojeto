@@ -1,0 +1,235 @@
+@font-face {
+    font-family: 'hacked';
+    src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/429997/HACKED.ttf') format('truetype');
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+   background-color: black;
+  }
+  
+  
+  html, body, div, span, object, iframe,
+  h1, h2, h3, h4, h5, h6, p, blockquote,
+  a, abbr, acronym, address, big, cite, code,
+  del, dfn, em, img, ins, kbd, q, s, samp,
+  small, strike, strong, sub, sup, tt, var,
+  b, u, i, dl, dt, dd, ol, ul, li,
+  fieldset, form, label, legend,
+  table, caption, tbody, tfoot, thead, tr, th, td,
+  article, aside, canvas, details, embed,
+  figure, figcaption, footer, header, hgroup,
+  menu, nav, output, ruby, section, summary,
+  time, mark, audio, video {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font-size: 100%;
+      font: inherit;
+      vertical-align: baseline;
+  }
+  
+  body {
+    font-family: helvetica, arial, verdana;
+  }
+  
+  .hacked {
+    font-family: 'hacked';
+  }
+  
+  a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    border-bottom: dotted white 1px;
+  }
+  
+  i {
+    font-style: italic;
+  }
+  
+  b {
+    font-weight: 500;
+  }
+  
+  @supports not(display: grid) {
+    p {
+      color: white;
+      max-width: 650px;
+      line-height: 1.6;
+      font-size: 2rem;
+      margin: auto;
+    }
+    
+    .embrace {
+      border-bottom: dotted 1px white;
+    }
+    
+    .gridcontainer {
+      display: none;
+    }
+  }
+  
+  @supports(display:grid) {
+  
+    .crappybrowser {
+      display: none;
+    }
+    
+  .gridcontainer {
+    display: grid;
+    width: 100vw;
+    grid-template-columns: repeat(10, 10vw);
+    grid-template-rows: repeat(20, 20vh);
+  }
+  
+  
+  .griditem2 {
+    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/429997/giphy.gif);
+    grid-column: 4 / 8;
+    grid-row: 2 / 5;
+    mix-blend-mode: multiply;
+  }
+  
+  .griditem1 {
+    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/429997/watchdogslogo.svg);
+    
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    grid-column: 4 / 8;
+    grid-row: 2 / 5;
+  }
+  
+  
+  .griditem3 {
+  
+    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/429997/watchdogs.png);
+    background-attachment: fixed;
+    grid-column-start: 1;
+    grid-column-end: 11;
+    grid-row: 6 / 11;
+  }
+  
+  .griditemlogo {
+    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/429997/watchdogslogo.svg);
+    grid-column: 3 / 9;
+    grid-row: 7 / 10;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    mix-blend-mode: difference;
+  }
+  
+  .griditem4 {
+    display: flex;
+    flex-direction: column;
+    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/429997/uglyfiedcode.png);
+    grid-column-start: 1;
+    grid-column-end: 11;
+    grid-row: 11 / 16;
+    background-color: black;
+    text-align: right;
+    background-blend-mode: luminosity;
+    align-items: flex-end;
+    justify-content: center;
+  }
+  
+  
+  .griditem4:hover {
+    background-blend-mode: exclusion;
+  }
+  
+  .griditem4 p {
+    background-color: black;
+    color: white;
+    line-height: 1.6;
+    font-weight: 100;
+    font-size: 1.6rem;
+    padding-left: 10px;
+    padding-right: 20px;
+  }
+    
+    .griditem5 {
+      display: flex;
+      grid-column: 2 / 10;
+      grid-row: 17 / 20;
+      font-size: 2vmin;
+      color: white;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    ::selection {
+      background-color: white;
+      color: black;
+    }
+    
+    ::-moz-selection {
+      background-color: white;
+      color: black;
+    }
+    
+  }
+  
+/* --- ESSENCIAL --- */
+ 
+.modal {
+display: none;
+}
+ 
+.modal:target {
+display: flex;
+}
+
+/* --- CUSTOMIZÁVEL, MAS OBRIGATÓRIO --- */
+.modal {
+  text-align: left;
+  backdrop-filter: blur(2px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  }
+   
+  .modal:target {
+  justify-content: space-around;
+  align-items: center;
+  }
+   
+  .modal__overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  cursor: default;
+  }
+   
+  .modal__content {
+  min-width: 480px;
+  position: relative;
+  background-color: #f5f5f5;
+  padding: 2rem;
+  }
+   
+  .modal__close {
+  color: initial;
+  text-decoration: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 0.5rem;
+  display: inline-block;
+  }
+
+  /* Aqui vai ficar a perte para esconder o cadastro */
+
+ #esconder{
+  display: none;
+}
